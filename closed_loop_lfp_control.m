@@ -196,6 +196,7 @@ function params = get_default_params()
     params.video=0;
     params.debug=0;
     params.blocksize=60;
+    params.Pbase=[1 1];
 
     % Signal and reference datasources:
     params.signal_datasource = 1;
