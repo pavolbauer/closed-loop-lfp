@@ -23,11 +23,8 @@ ylim([3 13])
 MINFREQ=6; % lower band frequency
 MAXFREQ=8; % upper band frequency
 
-signal=bl_data(ch,:);
-p=nextpow2(length(signal));
-[Pxx,F] = periodogram(signal,rectwin(length(signal)),2^p,SR);
 I= F>MINFREQ & F<MAXFREQ;
-Pbase=Pxx(I);
+Pbase=mean(P(I,:),2);
 
 %% 5) run the closed-loop control
 threshold=10;
