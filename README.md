@@ -26,4 +26,3 @@ RHD2000-Matlab Toolbox by Intan Technologies.
 
 Author: Pavol Bauer, Uppsala University, Dep. Scientific Computing, 2017
 E-mail: bauer.pa@gmail.com
-Github: github.com/pavolbauer
