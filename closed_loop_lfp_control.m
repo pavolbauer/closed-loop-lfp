@@ -89,7 +89,7 @@ end
 
 % Initialize the DAQ-device
 if exist('params.daqs',1)
-    params.daqs.queueOutputData([0 0]); % make sure to set initial voltage to 0
+    params.daqs.queueOutputData(0); % make sure to set initial voltage to 0
     params.daqs.startBackground()
     params.daqs.stop()
     params.daqs.queueOutputData(params.Wform); % queue actual trigger waveform
@@ -173,7 +173,7 @@ clear datablock;
 % Set final output voltage to 0
 if exist('params.daqs',1)
     params.daqs.stop()
-    params.daqs.queueOutputData([0 0]);
+    params.daqs.queueOutputData(0);
     params.daqs.startBackground()
     params.daqs.stop()
 end
@@ -234,7 +234,7 @@ function detected = process_theta(signal, params)
            if exist('params.daqs',1)
                if params.daqs.IsRunning
                   params.daqs.stop;
-                  params.daqs.queueOutputData([0 0]);
+                  params.daqs.queueOutputData(0);
                   params.daqs.startBackground()
                   params.daqs.stop; 
                   params.daqs.queueOutputData(Wform);
